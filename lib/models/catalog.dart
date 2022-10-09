@@ -1,20 +1,11 @@
 import 'dart:convert';
 
 class CatalogModel {
-  static final items = [
-    Item(
-        id: "product01",
-        name: "samsung",
-        desc: "good",
-        price: 55500,
-        color: "#33505a",
-        image:
-            "https://m.media-amazon.com/images/I/41ZGJxnJu1S._SX300_SY300_QL70_FMwebp_.jpg")
-  ];
+  static List<Item> items = [];
 }
 
 class Item {
-  final String id;
+  final int id;
   final String name;
   final String desc;
   final int price;
@@ -30,7 +21,7 @@ class Item {
     required this.image,
   });
 
-  factory Item.fromJson(Map<String, dynamic> json) => Item(
+  factory Item.fromMap(Map<String, dynamic> json) => Item(
         id: json["id"],
         name: json["name"],
         desc: json["desc"],
